@@ -38,6 +38,7 @@ params:
     logo:
       path: logo.png
       dark: logo-dark.png
+    width: wide
   page:
     width: wide
   footer:
