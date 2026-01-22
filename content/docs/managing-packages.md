@@ -57,6 +57,24 @@ git pkgs update              # update all
 git pkgs update lodash       # update specific package
 ```
 
+### browse
+
+Get the filesystem path to an installed package's source code:
+
+```bash
+git pkgs browse lodash           # print path
+git pkgs browse lodash --open    # open in file browser
+git pkgs browse serde -m cargo   # specify manager
+```
+
+Open package source in your editor:
+
+```bash
+code $(git pkgs browse lodash)
+```
+
+Returns exit code 2 if the package manager doesn't support path lookup.
+
 ## Multi-ecosystem projects
 
 If your project has multiple lockfiles, `install` runs for all detected managers:
