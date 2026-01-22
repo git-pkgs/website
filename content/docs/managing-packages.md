@@ -1,5 +1,5 @@
 ---
-title: Package Management
+title: Managing Packages
 weight: 50
 ---
 

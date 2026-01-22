@@ -30,8 +30,8 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      light: /logo.png
-      dark: /logo.png
+      path: logo.png
+      dark: logo-dark.png
   page:
     width: wide
   footer:

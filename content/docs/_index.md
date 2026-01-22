@@ -14,7 +14,7 @@ git-pkgs tracks your dependency history across git commits. Initialize a databas
   {{< card link="sbom" title="SBOM" subtitle="Export CycloneDX or SPDX" >}}
   {{< card link="ci-cd" title="CI/CD" subtitle="GitHub Actions, GitLab CI, and more" >}}
   {{< card link="bisect" title="Bisect" subtitle="Binary search for dependency changes" >}}
-  {{< card link="package-management" title="Package Management" subtitle="Install, add, update, remove" >}}
+  {{< card link="managing-packages" title="Managing Packages" subtitle="Install, add, update, remove" >}}
 {{< /cards >}}
 
 ### Libraries
