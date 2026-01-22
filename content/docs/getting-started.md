@@ -3,22 +3,7 @@ title: Getting Started
 weight: 10
 ---
 
-## Installation
-
-Install with Homebrew:
-
-```bash
-brew tap git-pkgs/git-pkgs
-brew install git-pkgs
-```
-
-Or download a binary from the [releases page](https://github.com/git-pkgs/git-pkgs/releases).
-
-Or build from source:
-
-```bash
-go install github.com/git-pkgs/git-pkgs@latest
-```
+See [Installation](/docs/installation) for setup instructions.
 
 ## Quick start
 

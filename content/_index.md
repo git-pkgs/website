@@ -15,8 +15,9 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="hx:mb-6">
+<div class="hx:mb-6 hx:flex hx:gap-4">
 {{< hextra/hero-button text="Get Started" link="docs/getting-started" >}}
+<a href="docs/installation" class="not-prose hx:font-medium hx:cursor-pointer hx:px-6 hx:py-3 hx:rounded-full hx:text-center hx:inline-block hx:border hx:border-gray-300 hx:dark:border-neutral-700 hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:transition-all hx:ease-in hx:duration-200">Installation</a>
 </div>
 
 <div class="hx:mt-6"></div>
@@ -24,11 +25,20 @@ layout: hextra-home
 Your lockfile shows what dependencies you have, but not how you got here. Running `git log Gemfile.lock` produces noise that no one reads. git-pkgs walks through your git history and builds a SQLite database so you can ask: when did we add this? who added it? what changed between releases? has anyone touched this in the last year?
 
 ```bash
-git pkgs init           # index your history (one-time)
+git pkgs init           # analyze history (one-time)
+git pkgs list           # show current dependencies
+git pkgs stats          # see overview
 git pkgs blame          # who added each dependency
-git pkgs history rails  # when was this package changed?
-git pkgs why express    # why was this added?
-git pkgs diff main..feature  # what changed between branches?
+git pkgs history        # all dependency changes over time
+git pkgs history rails  # track a specific package
+git pkgs why rails      # why was this added?
+git pkgs diff --from=HEAD~10  # what changed recently?
+git pkgs diff --from=main --to=feature  # compare branches
+git pkgs vulns          # scan for known CVEs
+git pkgs vulns blame    # who introduced each vulnerability
+git pkgs outdated       # find packages with newer versions
+git pkgs update         # update all dependencies
+git pkgs add lodash     # add a package
 ```
 
 The database lives in `.git/pkgs.sqlite3` and stays current through git hooks. Core commands work entirely offline with no network access.
