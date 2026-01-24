@@ -25,12 +25,18 @@ menu:
       weight: 2
       params:
         icon: github
-    - name: Theme
+    - name: Search
       weight: 3
+      params:
+        type: search
+    - name: Theme
+      weight: 4
       params:
         type: theme-toggle
 
 params:
+  search:
+    enable: true
   description: Dependency tools for git
   navbar:
     displayTitle: true
