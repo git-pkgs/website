@@ -32,7 +32,7 @@ git-pkgs supports different ecosystems at different levels depending on the unde
 | Homebrew | Brewfile | Brewfile.lock.json | ✓ | ✓ | brew |
 | Julia | Project.toml | Manifest.toml | ✓ | ✓ | |
 | LuaRocks | *.rockspec | | ✓ | | luarocks |
-| Maven | pom.xml, build.gradle, build.sbt | gradle.lockfile | ✓ | ✓ | maven, gradle, sbt |
+| Maven | pom.xml, build.gradle, build.sbt | gradle.lockfile, maven.graph.json, dependencies.lock | ✓ | ✓ | maven, gradle, sbt |
 | Nimble | *.nimble | | ✓ | | nimble |
 | Nix | flake.nix | flake.lock | | | |
 | npm | package.json | package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lock | ✓ | ✓ | npm, pnpm, yarn, bun |

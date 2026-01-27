@@ -19,6 +19,8 @@ Binaries are available for:
 - Linux (amd64 and arm64)
 - Windows (amd64)
 
+Each release includes man pages in the archive. Copy them to your man path (e.g., `/usr/local/share/man/man1/`) to enable `man git-pkgs`.
+
 ## Build from source
 
 Requires Go 1.22 or later.
@@ -30,7 +32,7 @@ go install github.com/git-pkgs/git-pkgs@latest
 ## Verify installation
 
 ```bash
-git pkgs version
+git pkgs --version
 ```
 
 ## Shell completions
