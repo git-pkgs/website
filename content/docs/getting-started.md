@@ -32,7 +32,8 @@ git pkgs why lodash     # why was this added?
 See what changed between commits, branches, or tags:
 
 ```bash
-git pkgs diff --from=HEAD~10
+git pkgs diff                             # HEAD vs working tree
+git pkgs diff --from=HEAD~10              # HEAD~10 vs working tree
 git pkgs diff --from=main --to=feature
 git pkgs show abc123    # changes in a single commit
 ```

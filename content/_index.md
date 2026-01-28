@@ -32,8 +32,9 @@ git pkgs blame          # who added each dependency
 git pkgs history        # all dependency changes over time
 git pkgs history rails  # track a specific package
 git pkgs why rails      # why was this added?
+git pkgs diff                 # HEAD vs working tree
 git pkgs diff --from=HEAD~10  # what changed recently?
-git pkgs diff --from=main --to=feature  # compare branches
+git pkgs diff main..feature   # compare branches
 git pkgs vulns          # scan for known CVEs
 git pkgs vulns blame    # who introduced each vulnerability
 git pkgs outdated       # find packages with newer versions
