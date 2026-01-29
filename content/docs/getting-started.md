@@ -67,8 +67,26 @@ git pkgs vulns --stateless
 git pkgs licenses --stateless
 ```
 
+## Output options
+
+Control colored output with the `--color` flag:
+
+```bash
+git pkgs diff --color=always   # force colors (useful for piping to less -R)
+git pkgs diff --color=never    # disable colors
+git pkgs diff --color=auto     # default: colors when output is a terminal
+```
+
+The `FORCE_COLOR` environment variable also enables colors when set.
+
+Use `--pager` to pipe output through your pager (respects `$PAGER`, defaults to `less`):
+
+```bash
+git pkgs history --pager
+```
+
 ## Supported ecosystems
 
-git-pkgs parses lockfiles from npm, RubyGems, Go, Cargo, pip, Composer, Maven, CocoaPods, Hex, NuGet, Pub, GitHub Actions, and more.
+git-pkgs parses lockfiles from npm, RubyGems, Go, Cargo, pip, Composer, Maven, CocoaPods, Hex, NuGet, Pub, GitHub Actions, and more. Run `git pkgs ecosystems` for the full list.
 
 For best results, commit your lockfiles. Manifests show version ranges but lockfiles show what actually got installed, including transitive dependencies.

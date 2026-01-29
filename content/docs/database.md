@@ -29,6 +29,20 @@ Row Counts
   Dependency Changes           4732
 ```
 
+To see which ecosystems are tracked in the database:
+
+```bash
+git pkgs info --ecosystems
+```
+
+Output:
+
+```
+Tracked ecosystems:
+  npm (247 dependencies)
+  golang (89 dependencies)
+```
+
 ## Schema
 
 View the database schema:

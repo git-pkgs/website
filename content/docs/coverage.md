@@ -5,10 +5,18 @@ weight: 55
 
 git-pkgs supports different ecosystems at different levels depending on the underlying capability required.
 
+To see this information from the command line:
+
+```bash
+git pkgs ecosystems           # table format
+git pkgs ecosystems -f json   # JSON output
+```
+
 | Ecosystem | Manifests | Lockfiles | Registry | ecosyste.ms | Managers |
 |-----------|-----------|-----------|----------|-------------|----------|
 | Alpine | APKBUILD | | | ✓ | |
 | Arch | PKGBUILD | | | | |
+| Bazel | MODULE.bazel | | | ✓ | |
 | Bower | bower.json | | | ✓ | |
 | Cargo | Cargo.toml | Cargo.lock | ✓ | ✓ | cargo |
 | Carthage | Cartfile | Cartfile.resolved | | ✓ | |
