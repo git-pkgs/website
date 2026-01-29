@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false
 
       - name: Run zizmor
-        uses: woodruffw/zizmor-action@3c4c4468d0c1cde057ba998b091a00e18fc20c87 # v1.3.1
+        uses: zizmorcore/zizmor-action@135698455da5c3b3e55f73f4419e481ab68cdd95 # v0.4.1
         with:
           sarif-file: results.sarif
 
