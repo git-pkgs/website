@@ -12,7 +12,6 @@ git pkgs sbom                      # CycloneDX JSON (default)
 git pkgs sbom --type spdx          # SPDX JSON
 git pkgs sbom -f xml               # XML instead of JSON
 git pkgs sbom --name my-project    # custom project name
-git pkgs sbom --stateless          # no database needed
 ```
 
 ## Formats
@@ -50,7 +49,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Generate SBOM
-        run: ./git-pkgs sbom --stateless --name=${{ github.repository }} > sbom.json
+        run: ./git-pkgs sbom --name=${{ github.repository }} > sbom.json
 
       - name: Upload to release
         uses: softprops/action-gh-release@v1
@@ -66,5 +65,4 @@ jobs:
 -f, --format=FORMAT     Output format: json (default) or xml
     --skip-enrichment   Skip fetching license info from registries
 -e, --ecosystem=NAME    Filter by ecosystem
-    --stateless         Parse manifests directly without database
 ```

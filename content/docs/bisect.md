@@ -74,14 +74,14 @@ Find when a vulnerability was introduced:
 
 ```bash
 git pkgs bisect start HEAD v1.0.0
-git pkgs bisect run sh -c 'git pkgs vulns --stateless 2>/dev/null | grep -q CVE-2024-1234 && exit 1 || exit 0'
+git pkgs bisect run sh -c 'git pkgs vulns 2>/dev/null | grep -q CVE-2024-1234 && exit 1 || exit 0'
 ```
 
 Find when a copyleft license appeared:
 
 ```bash
 git pkgs bisect start HEAD v1.0.0
-git pkgs bisect run sh -c 'git pkgs licenses --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause --stateless >/dev/null 2>&1'
+git pkgs bisect run sh -c 'git pkgs licenses --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause >/dev/null 2>&1'
 ```
 
 Find when tests started failing due to a dependency:

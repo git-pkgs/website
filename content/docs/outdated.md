@@ -11,7 +11,6 @@ Find dependencies with newer versions available.
 git pkgs outdated               # all outdated packages
 git pkgs outdated --major       # only major version updates
 git pkgs outdated --minor       # minor and major (skip patch)
-git pkgs outdated --stateless   # no database needed
 ```
 
 Major updates are shown in red, minor in yellow, patch in cyan.
@@ -46,7 +45,6 @@ git pkgs diff HEAD           # review changes
     --at=REF            Show outdated at a point in time (date or git ref)
 -e, --ecosystem=NAME    Filter by ecosystem
 -f, --format=FORMAT     Output format (text, json)
-    --stateless         Parse manifests directly without database
 ```
 
 ## Data source

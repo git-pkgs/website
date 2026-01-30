@@ -57,16 +57,6 @@ git pkgs outdated           # packages with updates available
 git pkgs outdated --major   # only major version updates
 ```
 
-## Stateless mode
-
-Most commands support `--stateless` to skip the database and parse manifests directly. Useful in CI where you don't want to initialize:
-
-```bash
-git pkgs diff main..HEAD --stateless
-git pkgs vulns --stateless
-git pkgs licenses --stateless
-```
-
 ## Output options
 
 Control colored output with the `--color` flag:

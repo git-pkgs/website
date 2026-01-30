@@ -12,7 +12,6 @@ Modern lockfiles include SHA256/SHA512 hashes that verify package contents haven
 ```bash
 git pkgs integrity              # show hashes for current dependencies
 git pkgs integrity -f json      # JSON output
-git pkgs integrity --stateless  # no database needed
 ```
 
 ## Drift detection
@@ -43,7 +42,6 @@ DRIFT DETECTED: lodash@4.17.21
     --drift             Detect same version with different hashes
 -e, --ecosystem=NAME    Filter by ecosystem
 -f, --format=FORMAT     Output format (text, json)
-    --stateless         Parse manifests directly without database
 ```
 
 ## Supported lockfiles

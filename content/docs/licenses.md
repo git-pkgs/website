@@ -10,7 +10,6 @@ Check the licenses of your dependencies and enforce compliance policies.
 ```bash
 git pkgs licenses               # show license for each dependency
 git pkgs licenses --group       # group output by license
-git pkgs licenses --stateless   # no database needed
 ```
 
 ## Compliance checking
@@ -47,7 +46,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Check licenses
-        run: ./git-pkgs licenses --stateless --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause,ISC
+        run: ./git-pkgs licenses --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause,ISC
 ```
 
 ## Options
@@ -58,7 +57,6 @@ jobs:
     --group             Group output by license instead of by package
 -e, --ecosystem=NAME    Filter by ecosystem
 -f, --format=FORMAT     Output format (text, json)
-    --stateless         Parse manifests directly without database
 ```
 
 ## Data source

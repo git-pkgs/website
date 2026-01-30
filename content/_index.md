@@ -112,7 +112,7 @@ Export a Software Bill of Materials in CycloneDX or SPDX format.
 ```bash
 git pkgs sbom                       # CycloneDX JSON
 git pkgs sbom --type spdx           # SPDX JSON
-git pkgs sbom --stateless           # no database needed, works in CI
+git pkgs sbom -f xml                # XML instead of JSON
 ```
 
 <div class="hx:mt-12"></div>

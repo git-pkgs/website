@@ -32,10 +32,6 @@ Yes. The [original git-pkgs](https://github.com/andrew/git-pkgs) was a Ruby gem.
 
 For best results, yes. Manifests (like `package.json` or `Gemfile`) show version ranges, but lockfiles show what actually got installed, including transitive dependencies. Without lockfiles, git-pkgs can only track your direct dependencies and their declared ranges.
 
-## What's stateless mode?
-
-Most commands have a `--stateless` flag that parses manifest files directly instead of querying the database. Use it when you haven't run `git pkgs init`, or in CI where you just want to diff two refs without building a full history. Stateless mode is faster for one-off checks but doesn't give you historical queries like `blame` or `history`.
-
 ## Does git-pkgs track transitive dependencies?
 
 Yes, if they're in your lockfiles. Lockfiles capture the full dependency tree, so git-pkgs can track when transitive dependencies changed even if you didn't touch your direct dependencies.

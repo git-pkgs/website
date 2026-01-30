@@ -27,7 +27,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Show dependency changes
-        run: ./git-pkgs diff --from=origin/${{ github.base_ref }} --to=HEAD --stateless
+        run: ./git-pkgs diff --from=origin/${{ github.base_ref }} --to=HEAD
 ```
 
 ### Vulnerability scanning with SARIF
@@ -53,7 +53,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Scan for vulnerabilities
-        run: ./git-pkgs vulns --stateless -f sarif > results.sarif
+        run: ./git-pkgs vulns -f sarif > results.sarif
 
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
@@ -79,7 +79,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Check for high/critical vulnerabilities
-        run: ./git-pkgs vulns --stateless -s high
+        run: ./git-pkgs vulns -s high
         # Exits non-zero if vulnerabilities found
 ```
 
@@ -101,7 +101,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Check licenses
-        run: ./git-pkgs licenses --stateless --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause,ISC
+        run: ./git-pkgs licenses --allow=MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause,ISC
         # Exits non-zero if disallowed licenses found
 ```
 
@@ -125,7 +125,7 @@ jobs:
           chmod +x git-pkgs
 
       - name: Generate CycloneDX SBOM
-        run: ./git-pkgs sbom --stateless --name=${{ github.repository }} > sbom.json
+        run: ./git-pkgs sbom --name=${{ github.repository }} > sbom.json
 
       - name: Upload SBOM to release
         uses: softprops/action-gh-release@v1
@@ -143,20 +143,9 @@ dependency-diff:
   script:
     - curl -sL https://github.com/git-pkgs/git-pkgs/releases/latest/download/git-pkgs-linux-amd64 -o git-pkgs
     - chmod +x git-pkgs
-    - ./git-pkgs diff --from=origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME --to=HEAD --stateless
+    - ./git-pkgs diff --from=origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME --to=HEAD
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-```
-
-## Stateless mode
-
-Most commands support `--stateless` to skip the database and parse manifests directly. This is faster in CI where you don't need historical context:
-
-```bash
-git pkgs diff main..HEAD --stateless
-git pkgs vulns --stateless
-git pkgs licenses --stateless
-git pkgs sbom --stateless
 ```
 
 ## Exit codes
