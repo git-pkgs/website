@@ -17,6 +17,8 @@ git pkgs bisect bad              # current commit has the problem
 git pkgs bisect good v1.0.0      # this version was fine
 ```
 
+If the commits aren't indexed yet, git-pkgs automatically runs an incremental reindex before proceeding.
+
 git-pkgs checks out a commit in the middle (only considering commits with dependency changes):
 
 ```
@@ -45,6 +47,8 @@ Dependencies changed:
   + tracking-pixel@1.0.0
   + pixel-utils@0.2.1
 ```
+
+Author attribution respects `.mailmap` if present in your repository.
 
 End the session:
 

@@ -26,6 +26,12 @@ git pkgs diff-file /path/to/project-a/package.json /path/to/project-b/package.js
 git pkgs diff-file before.lock after.lock --filename=Gemfile.lock
 ```
 
+`-t, --type` filters by dependency type (runtime, development, etc.):
+
+```bash
+git pkgs diff-file old.lock new.lock --type=runtime
+```
+
 `-f, --format` sets the output format (`text` or `json`):
 
 ```bash

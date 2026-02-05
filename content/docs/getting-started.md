@@ -21,11 +21,13 @@ Now you can query your dependency history:
 ```bash
 git pkgs list           # show current dependencies
 git pkgs stats          # overview of your dependency history
-git pkgs blame          # who added each dependency
+git pkgs blame          # who added each dependency (also: praise)
 git pkgs history        # all dependency changes over time
 git pkgs history rails  # track a specific package
 git pkgs why lodash     # why was this added?
 ```
+
+If your repository has a `.mailmap` file, author attribution in `blame`, `stats`, `history`, and `bisect` commands respects it for consistent contributor identity resolution.
 
 ## Comparing changes
 
@@ -35,7 +37,8 @@ See what changed between commits, branches, or tags:
 git pkgs diff                             # HEAD vs working tree
 git pkgs diff --from=HEAD~10              # HEAD~10 vs working tree
 git pkgs diff --from=main --to=feature
-git pkgs show abc123    # changes in a single commit
+git pkgs diff --type=runtime              # filter by dependency type
+git pkgs show abc123                      # changes in a single commit
 ```
 
 ## Vulnerability scanning
@@ -74,6 +77,17 @@ Use `--pager` to pipe output through your pager (respects `$PAGER`, defaults to 
 ```bash
 git pkgs history --pager
 ```
+
+## Git submodules
+
+By default, git-pkgs ignores dependencies in git submodules. To include them:
+
+```bash
+git pkgs list --include-submodules
+git pkgs diff --include-submodules
+```
+
+The `--include-submodules` flag works with all commands that scan the working directory.
 
 ## Supported ecosystems
 

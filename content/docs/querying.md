@@ -74,4 +74,16 @@ Gemfile:5:gem "rails", "~> 7.0"
 Gemfile.lock:142:    rails (7.0.8)
 ```
 
-Like grep but scoped to manifest files that git-pkgs recognizes.
+Like grep but scoped to manifest files that git-pkgs recognizes. The command respects `.gitignore` and excludes git submodules by default (use `--include-submodules` to scan them).
+
+## Blame
+
+Show who added each current dependency:
+
+```bash
+git pkgs blame              # attribute all dependencies
+git pkgs blame -e npm       # filter by ecosystem
+git pkgs praise             # alias for blame
+```
+
+If your repository has a `.mailmap` file, author attribution respects it for consistent contributor identity.
