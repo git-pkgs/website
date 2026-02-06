@@ -34,6 +34,18 @@ git pkgs notes list --namespace security
 
 The default namespace is empty. Notes with different namespaces on the same purl are independent.
 
+See which namespaces are in use:
+
+```bash
+git pkgs notes namespaces
+```
+
+You can scope this to a specific package with `--purl-filter`:
+
+```bash
+git pkgs notes namespaces --purl-filter lodash
+```
+
 ## Metadata
 
 The `--set key=value` flag stores structured key-value pairs. These are persisted as JSON and round-trip through `show -f json`.
@@ -51,6 +63,7 @@ append <purl>  Append message text and merge metadata (creates if missing)
 show <purl>    Display a note
 list           List all notes
 remove <purl>  Delete a note
+namespaces     List namespaces with note counts
 ```
 
 ## Options
