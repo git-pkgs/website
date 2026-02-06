@@ -105,6 +105,36 @@ jobs:
         # Exits non-zero if disallowed licenses found
 ```
 
+### Enforce package policy with notes
+
+If you maintain [notes](/docs/notes) with a `policy` namespace marking packages as `banned`, a CI step can check current dependencies against them:
+
+```yaml
+name: Package Policy
+on: pull_request
+
+jobs:
+  policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install git-pkgs
+        run: |
+          curl -sL https://github.com/git-pkgs/git-pkgs/releases/latest/download/git-pkgs-linux-amd64 -o git-pkgs
+          chmod +x git-pkgs
+
+      - name: Check for banned packages
+        run: |
+          banned=$(./git-pkgs notes list --namespace policy -f json \
+            | jq -r '.[] | select(.metadata.status == "banned") | .purl')
+          if [ -n "$banned" ]; then
+            echo "Banned packages found:"
+            echo "$banned"
+            exit 1
+          fi
+```
+
 ### Generate SBOM on release
 
 ```yaml
