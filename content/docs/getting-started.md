@@ -91,6 +91,6 @@ The `--include-submodules` flag works with all commands that scan the working di
 
 ## Supported ecosystems
 
-git-pkgs parses lockfiles from npm, RubyGems, Go, Cargo, pip, Composer, Maven, CocoaPods, Hex, NuGet, Pub, GitHub Actions, and more. Run `git pkgs ecosystems` for the full list.
+git-pkgs parses lockfiles from npm, RubyGems, Go, Cargo, pip, Composer, Maven, CocoaPods, Hex, NuGet, Pub, GitHub Actions, and more. It also recognizes `.tool-versions` (asdf/mise) files and `.gitmodules` for git submodule tracking. Run `git pkgs ecosystems` for the full list.
 
 For best results, commit your lockfiles. Manifests show version ranges but lockfiles show what actually got installed, including transitive dependencies.

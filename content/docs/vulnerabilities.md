@@ -112,4 +112,6 @@ Your exposure:
 
 ## Data source
 
-Vulnerability data comes from OSV, which aggregates advisories from GitHub (GHSA), NVD (CVE), RustSec, PyPI, Go, and others. Data is cached locally and refreshed when stale (>24h).
+Vulnerability data comes from [OSV](https://osv.dev), which aggregates advisories from GitHub (GHSA), NVD (CVE), RustSec, PyPI, Go, and others. Data is cached locally and refreshed when stale (>24h).
+
+The underlying [`vulns`](/docs/modules/vulns) library handles API queries, CVSS parsing, and affected version matching.

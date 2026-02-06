@@ -16,6 +16,7 @@ git pkgs ecosystems -f json   # JSON output
 |-----------|-----------|-----------|----------|-------------|----------|
 | Alpine | APKBUILD | | | ✓ | |
 | Arch | PKGBUILD | | | | |
+| asdf | .tool-versions | | | | |
 | Bazel | MODULE.bazel | | | ✓ | |
 | Bower | bower.json | | | ✓ | |
 | Cargo | Cargo.toml | Cargo.lock | ✓ | ✓ | cargo |
@@ -32,6 +33,7 @@ git pkgs ecosystems -f json   # JSON output
 | Docker | Dockerfile, compose.yml | | | ✓ | |
 | Dub | dub.json, dub.sdl | | ✓ | | |
 | Elm | elm.json | | ✓ | ✓ | |
+| Git | .gitmodules | | | | |
 | Go | go.mod | go.sum | ✓ | ✓ | gomod |
 | GitHub Actions | .github/workflows/*.yml | | | ✓ | |
 | Hackage | *.cabal | cabal.project.freeze | ✓ | ✓ | cabal, stack |
