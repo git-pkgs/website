@@ -117,6 +117,22 @@ git pkgs sbom -f xml                # XML instead of JSON
 
 <div class="hx:mt-12"></div>
 
+## Annotate packages
+
+Attach notes and structured metadata to any package. Use namespaces to organize notes by concern.
+
+```bash
+git pkgs notes add pkg:npm/lodash -m "approved for use" --set status=approved
+git pkgs notes add pkg:npm/moment --namespace policy \
+  -m "Use dayjs instead" --set status=deprecated
+git pkgs notes append pkg:npm/lodash -m "re-reviewed Q1 2026" --set reviewer=alice
+git pkgs notes list --namespace policy
+```
+
+Notes work well as a building block for package policy enforcement, security review tracking, license decisions, and sponsorship records.
+
+<div class="hx:mt-12"></div>
+
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
     title="Blame & History"
@@ -152,6 +168,11 @@ git pkgs sbom -f xml                # XML instead of JSON
     title="SBOM Export"
     subtitle="Generate CycloneDX or SPDX for compliance workflows and vulnerability tracking."
     link="/docs/sbom"
+  >}}
+  {{< hextra/feature-card
+    title="Package Notes"
+    subtitle="Attach messages and structured metadata to packages. Organize by namespace for policy, reviews, and audits."
+    link="/docs/notes"
   >}}
   {{< hextra/feature-card
     title="CI Ready"

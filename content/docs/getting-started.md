@@ -60,6 +60,17 @@ git pkgs outdated           # packages with updates available
 git pkgs outdated --major   # only major version updates
 ```
 
+## Annotating packages
+
+Attach notes and metadata to packages for policy tracking, security reviews, or any other purpose:
+
+```bash
+git pkgs notes add pkg:npm/lodash -m "approved" --set status=approved
+git pkgs notes list
+```
+
+See [Notes](/docs/notes) for more.
+
 ## Output options
 
 Control colored output with the `--color` flag:
