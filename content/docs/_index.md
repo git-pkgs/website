@@ -13,6 +13,7 @@ git-pkgs tracks your dependency history across git commits. Initialize a databas
   {{< card link="integrity" title="Integrity" subtitle="Verify checksums and detect drift" >}}
   {{< card link="sbom" title="SBOM" subtitle="Export CycloneDX or SPDX" >}}
   {{< card link="ci-cd" title="CI/CD" subtitle="GitHub Actions, GitLab CI, and more" >}}
+  {{< card link="notes" title="Notes" subtitle="Attach metadata to packages" >}}
   {{< card link="bisect" title="Bisect" subtitle="Binary search for dependency changes" >}}
   {{< card link="diff-driver" title="Diff Driver" subtitle="Readable lockfile diffs" >}}
   {{< card link="managing-packages" title="Managing Packages" subtitle="Install, add, update, remove" >}}
