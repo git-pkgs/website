@@ -18,6 +18,7 @@ git-pkgs tracks your dependency history across git commits. Initialize a databas
   {{< card link="diff-driver" title="Diff Driver" subtitle="Readable lockfile diffs" >}}
   {{< card link="managing-packages" title="Managing Packages" subtitle="Install, add, update, remove" >}}
   {{< card link="faq" title="FAQ" subtitle="Common questions" >}}
+  {{< card link="reference" title="Command Reference" subtitle="Every command and flag" >}}
 {{< /cards >}}
 
 ### Libraries

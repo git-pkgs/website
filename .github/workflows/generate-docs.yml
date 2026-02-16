@@ -1,0 +1,54 @@
+name: Generate Command Reference
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Setup Go
+        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version-file: go.mod
+
+      - name: Get latest CLI tag
+        id: tag
+        run: |
+          tag=$(gh api repos/git-pkgs/git-pkgs/releases/latest --jq '.tag_name')
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Clone CLI
+        run: git clone --branch "$TAG" --depth 1 https://github.com/git-pkgs/git-pkgs.git cli
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+
+      - name: Generate docs
+        run: cd cli && go run scripts/generate-docs/main.go
+
+      - name: Copy docs
+        run: |
+          mkdir -p content/docs/reference
+          cp cli/docs/reference/*.md content/docs/reference/
+          rm -rf cli
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          branch: update-command-reference
+          title: Update command reference
+          commit-message: "Update command reference from ${{ steps.tag.outputs.tag }}"
+          body: "Generated from git-pkgs/git-pkgs@${{ steps.tag.outputs.tag }}"
+          delete-branch: true
