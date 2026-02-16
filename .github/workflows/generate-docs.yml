@@ -17,11 +17,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup Go
-        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
-        with:
-          go-version-file: go.mod
-
       - name: Get latest CLI tag
         id: tag
         run: |
@@ -34,6 +29,11 @@ jobs:
         run: git clone --branch "$TAG" --depth 1 https://github.com/git-pkgs/git-pkgs.git cli
         env:
           TAG: ${{ steps.tag.outputs.tag }}
+
+      - name: Setup Go
+        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version-file: cli/go.mod
 
       - name: Generate docs
         run: cd cli && go run scripts/generate-docs/main.go
