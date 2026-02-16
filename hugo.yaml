@@ -15,6 +15,12 @@ markup:
 
 enableRobotsTXT: true
 
+outputs:
+  home:
+    - html
+    - rss
+    - llms
+
 menu:
   main:
     - name: Docs
