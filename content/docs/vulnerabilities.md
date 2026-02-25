@@ -8,11 +8,11 @@ git-pkgs scans dependencies for known vulnerabilities using the [OSV](https://os
 ## Basic usage
 
 ```bash
-git pkgs vulns                  # scan at HEAD
-git pkgs vulns v1.0.0           # scan at a tag
-git pkgs vulns -s high          # only critical and high severity
-git pkgs vulns -e npm           # filter by ecosystem
-git pkgs vulns -f sarif         # output for GitHub code scanning
+git pkgs vulns scan             # scan at HEAD
+git pkgs vulns scan -c v1.0.0   # scan at a commit or tag
+git pkgs vulns scan -s high     # only critical and high severity
+git pkgs vulns scan -e npm      # filter by ecosystem
+git pkgs vulns scan -f sarif    # output for GitHub code scanning
 ```
 
 ## Blame

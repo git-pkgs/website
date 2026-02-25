@@ -35,7 +35,7 @@ git pkgs why rails      # why was this added?
 git pkgs diff                 # HEAD vs working tree
 git pkgs diff --from=HEAD~10  # what changed recently?
 git pkgs diff main..feature   # compare branches
-git pkgs vulns          # scan for known CVEs
+git pkgs vulns scan     # scan for known CVEs
 git pkgs vulns blame    # who introduced each vulnerability
 git pkgs outdated       # find packages with newer versions
 git pkgs update         # update all dependencies
@@ -51,7 +51,7 @@ The database lives in `.git/pkgs.sqlite3` and stays current through git hooks. C
 Static scanners tell you what's vulnerable. git-pkgs tells you who introduced it, when, and how long it took to fix.
 
 ```bash
-git pkgs vulns                      # scan current dependencies
+git pkgs vulns scan                 # scan current dependencies
 git pkgs vulns blame                # who introduced each vulnerability
 git pkgs vulns praise --summary     # who fixes vulnerabilities fastest
 git pkgs vulns history lodash       # timeline for a specific package
