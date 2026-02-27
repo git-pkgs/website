@@ -9,8 +9,10 @@ Scan dependencies for vulnerabilities
 Check all dependencies against the OSV database for known vulnerabilities.
 Results are grouped by severity.
 
-By default, uses cached vulnerability data from the database if available.
-Use --live to always query OSV directly.
+By default, syncs vulnerability data from OSV before scanning. The sync uses a
+24-hour cache so repeated scans won't re-fetch everything.
+Use --live to query OSV directly for each dependency version.
+Use --no-sync to skip the sync and use only previously cached data.
 
 ```
 git-pkgs vulns scan [flags]
@@ -25,6 +27,7 @@ git-pkgs vulns scan [flags]
   -f, --format string      Output format: text, json, sarif (default "text")
   -h, --help               help for scan
       --live               Query OSV directly instead of using cached data
+      --no-sync            Skip auto-sync and use only cached vulnerability data
   -s, --severity string    Minimum severity to report: critical, high, medium, low
 ```
 
