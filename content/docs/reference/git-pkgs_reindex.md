@@ -9,6 +9,8 @@ Update database with new commits
 Incrementally update the git-pkgs database with commits since
 the last analysis. Use this after pulling new changes.
 
+When no branch is specified, all tracked branches are updated.
+
 ```
 git-pkgs reindex [flags]
 ```
@@ -16,7 +18,7 @@ git-pkgs reindex [flags]
 ### Options
 
 ```
-  -b, --branch string   Branch to reindex (default: tracked branch)
+  -b, --branch string   Branch to reindex (default: all tracked branches)
   -h, --help            help for reindex
 ```
 
