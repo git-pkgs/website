@@ -31,9 +31,26 @@ for _, v := range results {
 
 The `vulns.Source` interface is implemented by multiple backends:
 
-- **osv** -- queries the [OSV API](https://osv.dev) (batch and single queries)
+- **osv** queries the [OSV API](https://osv.dev), batched up to 1000 packages
+- **depsdev** queries [deps.dev](https://deps.dev), batched up to 5000 packages
+- **ghsa** queries GitHub Security Advisories, optional token for higher rate limits
+- **nvd** queries the NIST NVD; CPE-based so PURL matching is approximate
+- **grypedb** queries a local Anchore Grype SQLite database, no network after download
+- **vulncheck** queries the commercial VulnCheck API with native PURL support
+- **vl** queries vulnerability-lookup.org by vendor/product
 
 Each source returns results in a common `vulns.Vulnerability` format based on the OSV schema.
+
+```go
+import (
+    "github.com/git-pkgs/vulns/ghsa"
+    "github.com/git-pkgs/vulns/grypedb"
+)
+
+g := ghsa.New(ghsa.WithToken(os.Getenv("GITHUB_TOKEN")))
+db, _ := grypedb.New("/path/to/cache", grypedb.WithAutoDownload())
+defer db.Close()
+```
 
 ## Key types
 

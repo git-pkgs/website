@@ -32,12 +32,13 @@ cmd, _ = translator.BuildCommand("bundler", "add", managers.CommandInput{
 
 ## Supported package managers
 
-npm, pnpm, yarn, bun, deno, bundler, gem, cargo, gomod, pip, uv, poetry, conda, composer, mix, rebar3, pub, cocoapods, swift, nuget, maven, gradle, sbt, cabal, stack, opam, luarocks, nimble, shards, cpanm, lein, vcpkg, conan, helm, brew.
+npm, pnpm, yarn, bun, deno, bundler, gem, cargo, gomod, pip, uv, poetry, conda, renv, composer, mix, rebar3, pub, cocoapods, swift, nuget, maven, gradle, sbt, cabal, stack, opam, luarocks, nimble, shards, cpanm, lein, vcpkg, conan, helm, brew.
 
 ## Operations
 
 | Operation | Description |
 |-----------|-------------|
+| `init` | Initialise a new project manifest |
 | `install` | Install dependencies from lockfile |
 | `add` | Add a new dependency |
 | `remove` | Remove a dependency |
@@ -45,6 +46,7 @@ npm, pnpm, yarn, bun, deno, bundler, gem, cargo, gomod, pip, uv, poetry, conda, 
 | `outdated` | Show packages with available updates |
 | `update` | Update dependencies |
 | `path` | Get filesystem path to installed package |
+| `resolve` | Print the resolved dependency tree |
 
 ## Installation
 
