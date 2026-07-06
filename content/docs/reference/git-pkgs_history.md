@@ -18,6 +18,7 @@ git-pkgs history [package] [flags]
 ```
       --author string      Filter by author name or email
   -e, --ecosystem string   Filter by ecosystem
+      --exclude-bots       Exclude changes by bot authors
   -f, --format string      Output format: text, json (default "text")
   -h, --help               help for history
       --since string       Only changes after this date (YYYY-MM-DD)

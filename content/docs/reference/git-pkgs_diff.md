@@ -17,10 +17,13 @@ git-pkgs diff [from..to] [flags]
 ### Options
 
 ```
+      --by string          Match dependencies by: manifest, ecosystem (default "manifest")
   -e, --ecosystem string   Filter by ecosystem
   -f, --format string      Output format: text, json (default "text")
       --from string        Starting commit (default: HEAD)
   -h, --help               help for diff
+      --stat               Show aggregate dependency change counts
+      --summary            Show aggregate dependency change counts
       --to string          Ending commit (default: working tree)
   -t, --type string        Filter by dependency type (runtime, development, etc.)
 ```

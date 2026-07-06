@@ -1,25 +1,26 @@
 ---
-title: "git-pkgs blame"
-description: "Show who added each dependency"
+title: "git-pkgs funding"
+description: "Show dependency funding information"
 weight: 10
 ---
 
-Show who added each dependency
+Show dependency funding information
 
-Show the commit and author that first added each current dependency.
+Check package metadata for funding links and show dependencies that have or need funding information.
 
 ```
-git-pkgs blame [flags]
+git-pkgs funding [flags]
 ```
 
 ### Options
 
 ```
-  -b, --branch string      Branch to query (default: first tracked branch)
+  -b, --branch string      Branch to query (default: current branch)
+  -c, --commit string      Check dependencies at specific commit (default: HEAD)
   -e, --ecosystem string   Filter by ecosystem
-      --exclude-bots       Exclude dependencies first added by bot authors
   -f, --format string      Output format: text, json (default "text")
-  -h, --help               help for blame
+  -h, --help               help for funding
+      --missing            Show dependencies without funding links
 ```
 
 ### Options inherited from parent commands

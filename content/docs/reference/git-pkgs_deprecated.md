@@ -1,25 +1,25 @@
 ---
-title: "git-pkgs blame"
-description: "Show who added each dependency"
+title: "git-pkgs deprecated"
+description: "Find deprecated dependency versions"
 weight: 10
 ---
 
-Show who added each dependency
+Find deprecated dependency versions
 
-Show the commit and author that first added each current dependency.
+Check installed dependency versions against registries and report deprecated versions.
 
 ```
-git-pkgs blame [flags]
+git-pkgs deprecated [flags]
 ```
 
 ### Options
 
 ```
-  -b, --branch string      Branch to query (default: first tracked branch)
+  -b, --branch string      Branch to query (default: current branch)
+  -c, --commit string      Check dependencies at specific commit (default: HEAD)
   -e, --ecosystem string   Filter by ecosystem
-      --exclude-bots       Exclude dependencies first added by bot authors
   -f, --format string      Output format: text, json (default "text")
-  -h, --help               help for blame
+  -h, --help               help for deprecated
 ```
 
 ### Options inherited from parent commands

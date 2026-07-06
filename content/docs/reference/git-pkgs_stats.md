@@ -18,6 +18,7 @@ git-pkgs stats [flags]
   -b, --branch string      Branch to query (default: first tracked branch)
       --by-author          Show detailed per-author statistics
   -e, --ecosystem string   Filter by ecosystem
+      --exclude-bots       Exclude changes by bot authors
   -f, --format string      Output format: text, json (default "text")
   -h, --help               help for stats
   -n, --limit int          Number of top items to show (default 10)
