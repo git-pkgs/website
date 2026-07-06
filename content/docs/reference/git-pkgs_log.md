@@ -17,6 +17,7 @@ git-pkgs log [flags]
 ```
       --author string      Filter by author name or email
   -e, --ecosystem string   Filter by ecosystem
+      --exclude-bots       Exclude commits by bot authors
   -f, --format string      Output format: text, json (default "text")
   -h, --help               help for log
   -n, --limit int          Maximum number of commits to show (default 20)

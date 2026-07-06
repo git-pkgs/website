@@ -21,6 +21,7 @@ git-pkgs licenses [flags]
   -c, --commit string      Check licenses at specific commit (default: HEAD)
       --copyleft           Flag copyleft licenses (GPL, AGPL)
       --deny strings       Deny these licenses (exit 1 if found)
+      --drift              Detect dependencies whose license changed between installed and latest versions
   -e, --ecosystem string   Filter by ecosystem
   -f, --format string      Output format: text, json, csv (default "text")
       --group              Group output by license
