@@ -46,7 +46,7 @@ git pkgs show abc123                      # changes in a single commit
 Check dependencies against the OSV database for known CVEs:
 
 ```bash
-git pkgs vulns              # scan current dependencies
+git pkgs vulns scan         # scan current dependencies
 git pkgs vulns blame        # who introduced each vulnerability
 git pkgs vulns praise       # who fixed vulnerabilities
 ```
