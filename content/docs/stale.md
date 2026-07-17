@@ -35,9 +35,7 @@ Shows dependencies sorted by how long since they were last changed in your repo.
 
 ```
 $ git pkgs stale --days=365
-Package              Last Changed    Days    Commit
-------------------------------------------------------------
-left-pad             2019-03-15      1842    abc1234
-moment               2020-06-01      1395    def5678
-request              2021-01-10      1107    ghi9012
+left-pad             2.0.1  (1842 days)  2019-03-15
+moment               1.1.0  (1395 days)  2020-06-01
+request              5.3.2  (1107 days)  2021-01-10
 ```
