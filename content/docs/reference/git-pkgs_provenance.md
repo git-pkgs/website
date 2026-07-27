@@ -1,15 +1,20 @@
 ---
-title: "git-pkgs deprecated"
-description: "Find deprecated or withdrawn dependency versions"
+title: "git-pkgs provenance"
+description: "Check dependency provenance metadata"
 weight: 10
 ---
 
-Find deprecated or withdrawn dependency versions
+Check dependency provenance metadata
 
-Check installed dependency versions against registries and report deprecated, yanked, or retracted versions.
+Check resolved dependencies for registry provenance and attestation metadata.
+
+The command reports verified trusted-publishing signals where registry APIs
+expose them, registry attestations and signatures as weaker integrity signals,
+and unsupported ecosystems explicitly instead of treating missing metadata as
+verified.
 
 ```
-git-pkgs deprecated [flags]
+git-pkgs provenance [flags]
 ```
 
 ### Options
@@ -19,7 +24,8 @@ git-pkgs deprecated [flags]
   -c, --commit string      Check dependencies at specific commit (default: HEAD)
   -e, --ecosystem string   Filter by ecosystem
   -f, --format string      Output format: text, json (default "text")
-  -h, --help               help for deprecated
+  -h, --help               help for provenance
+      --missing            Only show dependencies without trusted-publishing provenance
 ```
 
 ### Options inherited from parent commands
