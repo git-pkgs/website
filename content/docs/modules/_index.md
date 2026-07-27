@@ -12,6 +12,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
 - **enrichment** combines registry and ecosyste.ms lookups behind a single interface
 - **forge** fetches repository metadata and drives issues/PRs/CI across git forges
 - **gitignore** matches paths against gitignore rules
+- **licensecheck** classifies license text against the SPDX corpus (fast-start fork of google/licensecheck)
 - **managers** wraps package manager CLIs behind a common interface for install, add, update, and remove
 - **manifests** parses lockfiles and manifest files to extract dependency information
 - **markup** renders README markup formats to HTML
@@ -21,6 +22,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
 - **registries** fetches package metadata from registry APIs
 - **resolve** parses package manager CLI output into dependency trees with PURLs
 - **reuse** extracts SPDX license info from REUSE-compliant projects
+- **sarif** reads, writes, and validates SARIF 2.1.0 logs
 - **sbom** reads and writes CycloneDX and SPDX documents
 - **sigstore** verifies sigstore bundles against the TUF trust root
 - **spdx** normalizes and validates license expressions
@@ -35,6 +37,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
   {{< card link="enrichment" title="enrichment" subtitle="Package metadata enrichment" >}}
   {{< card link="forge" title="forge" subtitle="Git forge API client and CLI" >}}
   {{< card link="gitignore" title="gitignore" subtitle="Gitignore pattern matching" >}}
+  {{< card link="licensecheck" title="licensecheck" subtitle="License text classification" >}}
   {{< card link="managers" title="managers" subtitle="Package manager CLI wrapper" >}}
   {{< card link="manifests" title="manifests" subtitle="Manifest and lockfile parsing" >}}
   {{< card link="markup" title="markup" subtitle="Markup to HTML rendering" >}}
@@ -44,6 +47,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
   {{< card link="registries" title="registries" subtitle="Registry API clients" >}}
   {{< card link="resolve" title="resolve" subtitle="Dependency tree parsing" >}}
   {{< card link="reuse" title="reuse" subtitle="REUSE spec parsing" >}}
+  {{< card link="sarif" title="sarif" subtitle="SARIF 2.1.0 read/write/validate" >}}
   {{< card link="sbom" title="sbom" subtitle="SBOM read/write" >}}
   {{< card link="sigstore" title="sigstore" subtitle="Sigstore bundle verification" >}}
   {{< card link="spdx" title="spdx" subtitle="SPDX license utilities" >}}
