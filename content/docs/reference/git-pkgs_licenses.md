@@ -26,6 +26,7 @@ git-pkgs licenses [flags]
   -f, --format string      Output format: text, json, csv (default "text")
       --group              Group output by license
   -h, --help               help for licenses
+      --offline            Use cached metadata without making network requests
       --permissive         Flag non-permissive licenses
       --unknown            Flag packages with unknown licenses
 ```
