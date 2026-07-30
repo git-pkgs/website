@@ -10,6 +10,7 @@ Standalone tools built alongside git-pkgs. Each is a single binary (or workflow)
 - **pin** vendors browser assets without npm
 - **outline** reduces a source tree to a structural skeleton for LLMs
 - **capcheck** fails CI when Go code gains new privileged capabilities
+- **licenses** scans repositories for license text against ScanCode's rule corpus
 - **distill** trains an oss-taxonomy classifier from an LLM-labelled corpus
 - **actions** are reusable GitHub Actions wrapping git-pkgs commands
 - **skills** is a Claude Code plugin exposing git-pkgs as agent skills
@@ -20,6 +21,7 @@ Standalone tools built alongside git-pkgs. Each is a single binary (or workflow)
   {{< card link="pin" title="pin" subtitle="Browser asset vendoring" >}}
   {{< card link="outline" title="outline" subtitle="Source tree compression" >}}
   {{< card link="capcheck" title="capcheck" subtitle="Go capability drift" >}}
+  {{< card link="licenses" title="licenses" subtitle="License text scanning" >}}
   {{< card link="distill" title="distill" subtitle="oss-taxonomy classifier training" >}}
   {{< card link="actions" title="actions" subtitle="Reusable GitHub Actions" >}}
   {{< card link="skills" title="skills" subtitle="Claude Code plugin" >}}
