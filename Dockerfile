@@ -1,12 +1,10 @@
-FROM golang:1.26.5-alpine AS builder
+FROM ghcr.io/gohugoio/hugo:v0.164.0 AS builder
 
-RUN apk add --no-cache git hugo
-
-WORKDIR /build
-COPY . .
+WORKDIR /project
+COPY --chown=hugo:hugo . .
 
 RUN hugo --minify
 
 FROM nginx:alpine
-COPY --from=builder /build/public /usr/share/nginx/html
+COPY --from=builder /project/public /usr/share/nginx/html
 EXPOSE 80
