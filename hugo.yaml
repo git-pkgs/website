@@ -1,5 +1,5 @@
 baseURL: https://git-pkgs.dev/
-languageCode: en-us
+locale: en-US
 title: git-pkgs
 
 module:
