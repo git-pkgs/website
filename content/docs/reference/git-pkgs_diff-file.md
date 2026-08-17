@@ -1,10 +1,10 @@
 ---
 title: "git-pkgs diff-file"
-description: "Compare dependencies between two files"
+description: "Compare dependencies and declared licenses between two files"
 weight: 10
 ---
 
-Compare dependencies between two files
+Compare dependencies and declared licenses between two files
 
 ```
 git-pkgs diff-file [from] [to] [flags]
