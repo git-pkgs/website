@@ -22,6 +22,7 @@ git-pkgs diff [from..to] [flags]
   -f, --format string      Output format: text, json (default "text")
       --from string        Starting commit (default: HEAD)
   -h, --help               help for diff
+      --kind string        Filter by manifest kind: manifest, lockfile
       --stat               Show aggregate dependency change counts
       --summary            Show aggregate dependency change counts
       --to string          Ending commit (default: working tree)
