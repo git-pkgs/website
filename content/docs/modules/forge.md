@@ -91,7 +91,7 @@ go get github.com/git-pkgs/forge
 ```
 
 ```bash
-brew install git-pkgs/git-pkgs/forge
+brew install git-pkgs-forge
 # or
 go install github.com/git-pkgs/forge/cmd/forge@latest
 ```
