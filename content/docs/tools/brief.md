@@ -72,7 +72,7 @@ r, _ := detect.New(knowledgeBase, "/path/to/project").Run()
 ## Installation
 
 ```bash
-brew install git-pkgs/git-pkgs/brief
+brew install git-pkgs-brief
 # or
 go install github.com/git-pkgs/brief/cmd/brief@latest
 ```

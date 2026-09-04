@@ -5,7 +5,7 @@ title: proxy
 A caching proxy for package registries. Speeds up installs by caching artifacts locally, and can hide newly published versions until they've aged past a configurable cooldown so automated pipelines aren't first in line for a malicious release.
 
 ```bash
-brew install git-pkgs/git-pkgs/proxy
+brew install git-pkgs-proxy
 proxy -listen :8080
 ```
 
@@ -55,7 +55,7 @@ Storage is local filesystem by default; `storage.url` accepts `s3://` (or any S3
 ## Installation
 
 ```bash
-brew install git-pkgs/git-pkgs/proxy
+brew install git-pkgs-proxy
 # or
 go install github.com/git-pkgs/proxy/cmd/proxy@latest
 # or
