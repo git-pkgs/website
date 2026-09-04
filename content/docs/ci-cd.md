@@ -16,7 +16,7 @@ Installs git-pkgs and initializes the database. The other actions expect this to
 ```yaml
 - uses: git-pkgs/actions/setup@v1
   with:
-    version: "0.1.9" # optional, defaults to latest
+    version: "0.19.0" # optional, defaults to latest
 ```
 
 ### Dependency diff
@@ -74,7 +74,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -100,7 +100,8 @@ If you need more control or use a different CI system, you can install git-pkgs 
 ```yaml
 - name: Install git-pkgs
   run: |
-    curl -sfL https://github.com/git-pkgs/git-pkgs/releases/latest/download/git-pkgs_0.1.9_linux_amd64.tar.gz \
+    v=$(curl -sfL https://api.github.com/repos/git-pkgs/git-pkgs/releases/latest | jq -r .tag_name | sed 's/^v//')
+    curl -sfL "https://github.com/git-pkgs/git-pkgs/releases/download/v${v}/git-pkgs_${v}_linux_amd64.tar.gz" \
       | tar xz -C /usr/local/bin git-pkgs
 
 - name: Initialize database
@@ -132,7 +133,8 @@ If you maintain [notes](/docs/notes) with a `policy` namespace marking packages 
 dependency-diff:
   stage: test
   script:
-    - curl -sfL https://github.com/git-pkgs/git-pkgs/releases/latest/download/git-pkgs_0.1.9_linux_amd64.tar.gz
+    - v=$(curl -sfL https://api.github.com/repos/git-pkgs/git-pkgs/releases/latest | jq -r .tag_name | sed 's/^v//')
+    - curl -sfL "https://github.com/git-pkgs/git-pkgs/releases/download/v${v}/git-pkgs_${v}_linux_amd64.tar.gz"
         | tar xz -C /usr/local/bin git-pkgs
     - git-pkgs init
     - git-pkgs diff origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME..HEAD

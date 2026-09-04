@@ -41,15 +41,14 @@ jobs:
   sbom:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-      - name: Install git-pkgs
-        run: |
-          curl -sL https://github.com/git-pkgs/git-pkgs/releases/latest/download/git-pkgs-linux-amd64 -o git-pkgs
-          chmod +x git-pkgs
+      - uses: git-pkgs/actions/setup@v1
 
       - name: Generate SBOM
-        run: ./git-pkgs sbom --name=${{ github.repository }} > sbom.json
+        run: git-pkgs sbom --name=${{ github.repository }} > sbom.json
 
       - name: Upload to release
         uses: softprops/action-gh-release@v1
