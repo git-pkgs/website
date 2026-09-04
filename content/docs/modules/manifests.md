@@ -25,7 +25,7 @@ for _, dep := range result.Dependencies {
 
 ## Supported ecosystems
 
-alpine, arch, asdf, bazel, bower, brew, cargo, carthage, clojars, cocoapods, composer, conan, conda, cpan, cran, crystal, deno, docker, dub, elm, gem, git, github-actions, golang, guix, hackage, haxelib, hex, julia, lean, luarocks, maven, nimble, nix, npm, nuget, pre-commit, pub, pypi, rpm, swift, vcpkg.
+alpine, arch, asdf, bazel, bower, brew, cargo, carthage, chef, clojars, cocoapods, composer, conan, conda, cpan, cran, crystal, deno, docker, dub, elm, gem, git, github-actions, golang, guix, hackage, haxelib, helm, hex, ips, julia, lean, luarocks, maven, nimble, nix, npm, nuget, opam, pre-commit, pub, pypi, rpm, swift, vagrant, vcpkg.
 
 ## Types
 
