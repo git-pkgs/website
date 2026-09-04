@@ -57,7 +57,9 @@ The `assets` sub-package is the runtime helper a Go web app uses to consume the 
 ## Installation
 
 ```bash
-brew install git-pkgs/git-pkgs/pin
+brew tap git-pkgs/git-pkgs
+brew trust --tap git-pkgs/git-pkgs
+brew install pin
 # or
 go install github.com/git-pkgs/pin/cmd/pin@latest
 ```
