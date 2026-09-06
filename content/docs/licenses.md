@@ -69,4 +69,4 @@ jobs:
 
 ## Data source
 
-License information is fetched from package registries via [ecosyste.ms](https://packages.ecosyste.ms/). Results are cached locally.
+License identifiers are fetched from package registries via [ecosyste.ms](https://packages.ecosyste.ms/) and cached locally. With `--license-text --format json` the command additionally downloads each dependency's published artifact into a local cache and scans it with the [licenses](../modules/licenses/) matcher, adding the extracted license and notice text and any detected SPDX expressions to the JSON output. Artifact scanning needs a resolved version per dependency, so a lockfile must be present; `--offline` restricts both lookups to what is already cached.
