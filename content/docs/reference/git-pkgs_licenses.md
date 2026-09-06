@@ -16,19 +16,21 @@ git-pkgs licenses [flags]
 ### Options
 
 ```
-      --allow strings      Only allow these licenses (exit 1 on violation)
-  -b, --branch string      Branch to query (default: current branch)
-  -c, --commit string      Check licenses at specific commit (default: HEAD)
-      --copyleft           Flag copyleft licenses (GPL, AGPL)
-      --deny strings       Deny these licenses (exit 1 if found)
-      --drift              Detect dependencies whose license changed between installed and latest versions
-  -e, --ecosystem string   Filter by ecosystem
-  -f, --format string      Output format: text, json, csv (default "text")
-      --group              Group output by license
-  -h, --help               help for licenses
-      --offline            Use cached metadata without making network requests
-      --permissive         Flag non-permissive licenses
-      --unknown            Flag packages with unknown licenses
+      --allow strings         Only allow these licenses (exit 1 on violation)
+  -b, --branch string         Branch to query (default: current branch)
+  -c, --commit string         Check licenses at specific commit (default: HEAD)
+      --copyleft              Flag copyleft licenses (GPL, AGPL)
+      --deny strings          Deny these licenses (exit 1 if found)
+      --dependencies string   Dependencies to include: direct, indirect, all (default "direct")
+      --drift                 Detect dependencies whose license changed between installed and latest versions
+  -e, --ecosystem string      Filter by ecosystem
+  -f, --format string         Output format: text, json, csv (default "text")
+      --group                 Group output by license
+  -h, --help                  help for licenses
+      --license-text          Include license and notice text from package artifacts in JSON output
+      --offline               Use cached metadata without making network requests
+      --permissive            Flag non-permissive licenses
+      --unknown               Flag packages with unknown licenses
 ```
 
 ### Options inherited from parent commands

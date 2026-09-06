@@ -17,7 +17,7 @@ git pkgs licenses --group       # group output by license
 Flag copyleft licenses:
 
 ```bash
-git pkgs licenses --permissive
+git pkgs licenses --copyleft
 ```
 
 Use an explicit allow list:
@@ -51,11 +51,20 @@ jobs:
 ## Options
 
 ```
-    --allow=LIST        Comma-separated list of allowed SPDX identifiers
-    --permissive        Flag copyleft licenses (GPL, AGPL, etc.)
-    --group             Group output by license instead of by package
--e, --ecosystem=NAME    Filter by ecosystem
--f, --format=FORMAT     Output format (text, json)
+    --allow=LIST         Only allow these SPDX identifiers (exit 1 on violation)
+    --deny=LIST          Deny these SPDX identifiers (exit 1 if found)
+    --permissive         Flag non-permissive licenses
+    --copyleft           Flag copyleft licenses (GPL, AGPL)
+    --unknown            Flag packages with unknown licenses
+    --drift              Flag dependencies whose license changed between installed and latest
+    --group              Group output by license instead of by package
+    --dependencies=KIND  Dependencies to include: direct, indirect, all (default direct)
+    --license-text       Include license and notice text from package artifacts (JSON only)
+    --offline            Use cached metadata without making network requests
+-b, --branch=NAME        Branch to query (default: current branch)
+-c, --commit=SHA         Check licenses at a specific commit (default: HEAD)
+-e, --ecosystem=NAME     Filter by ecosystem
+-f, --format=FORMAT      Output format: text, json, csv
 ```
 
 ## Data source

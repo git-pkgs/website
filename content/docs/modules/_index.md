@@ -12,7 +12,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
 - **enrichment** combines registry and ecosyste.ms lookups behind a single interface
 - **forge** fetches repository metadata and drives issues/PRs/CI across git forges
 - **gitignore** matches paths against gitignore rules
-- **licensecheck** classifies license text against the SPDX corpus (fast-start fork of google/licensecheck)
+- **licenses** matches license text and scans repositories against ScanCode's rule corpus
 - **managers** wraps package manager CLIs behind a common interface for install, add, update, and remove
 - **manifests** parses lockfiles and manifest files to extract dependency information
 - **markup** renders README markup formats to HTML
@@ -37,7 +37,7 @@ git-pkgs is built from a set of Go libraries that handle different aspects of de
   {{< card link="enrichment" title="enrichment" subtitle="Package metadata enrichment" >}}
   {{< card link="forge" title="forge" subtitle="Git forge API client and CLI" >}}
   {{< card link="gitignore" title="gitignore" subtitle="Gitignore pattern matching" >}}
-  {{< card link="licensecheck" title="licensecheck" subtitle="License text classification" >}}
+  {{< card link="licenses" title="licenses" subtitle="License text matching and scanning" >}}
   {{< card link="managers" title="managers" subtitle="Package manager CLI wrapper" >}}
   {{< card link="manifests" title="manifests" subtitle="Manifest and lockfile parsing" >}}
   {{< card link="markup" title="markup" subtitle="Markup to HTML rendering" >}}

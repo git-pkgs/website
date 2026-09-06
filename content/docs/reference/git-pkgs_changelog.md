@@ -24,6 +24,7 @@ git-pkgs changelog <package> [flags]
 
 ```
   -e, --ecosystem string   Filter by ecosystem
+  -f, --format string      Output format: text, json (default "text")
       --from string        Current/old version
   -h, --help               help for changelog
   -m, --manager string     Override package manager (for ecosystem detection)
