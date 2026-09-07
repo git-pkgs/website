@@ -1,4 +1,4 @@
-name: Generate Command Reference
+name: Sync generated docs
 
 on:
   schedule:
@@ -44,11 +44,32 @@ jobs:
           cp cli/docs/reference/*.md content/docs/reference/
           rm -rf cli
 
+      - name: Sync governance docs
+        run: |
+          git clone --depth 1 https://github.com/git-pkgs/.github.git governance
+          sync() {
+            src="governance/$1"
+            dst="content/$2"
+            title=$(sed -n '1s/^# //p' "$src")
+            {
+              printf -- '---\ntitle: %s\neditURL: https://github.com/git-pkgs/.github/edit/main/%s\n---\n\n' "$title" "$1"
+              tail -n +2 "$src" | sed '1{/^$/d}'
+            } > "$dst"
+          }
+          sync CONTRIBUTING.md contributing.md
+          sync SECURITY.md security.md
+          sync CODE_OF_CONDUCT.md code-of-conduct.md
+          sync SUPPORT.md support.md
+          sed -i 's|(SECURITY.md)|(/security/)|g' content/support.md
+          rm -rf governance
+
       - name: Create pull request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
-          branch: update-command-reference
-          title: Update command reference
-          commit-message: "Update command reference from ${{ steps.tag.outputs.tag }}"
-          body: "Generated from git-pkgs/git-pkgs@${{ steps.tag.outputs.tag }}"
+          branch: sync-generated-docs
+          title: Sync generated docs
+          commit-message: "Sync generated docs (git-pkgs ${{ steps.tag.outputs.tag }})"
+          body: |
+            Command reference generated from git-pkgs/git-pkgs@${{ steps.tag.outputs.tag }}.
+            Governance pages synced from git-pkgs/.github.
           delete-branch: true
