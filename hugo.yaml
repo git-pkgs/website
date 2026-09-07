@@ -56,7 +56,6 @@ params:
   footer:
     displayPoweredBy: false
     width: wide
-    content: MIT License
   editURL:
     enable: true
     base: https://github.com/git-pkgs/website/edit/main/content
