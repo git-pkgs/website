@@ -41,3 +41,7 @@ content/
 ## Deployment
 
 Pushes to `main` trigger GitHub Actions to build and deploy to GitHub Pages.
+
+## License
+
+[MIT](LICENSE).
