@@ -21,7 +21,7 @@ git-pkgs vulns exposure [flags]
   -e, --ecosystem string   Filter by ecosystem
   -f, --format string      Output format: text, json (default "text")
   -h, --help               help for exposure
-  -r, --ref string         Check exposure at specific commit (default: HEAD)
+  -r, --ref string         Check exposure at specific commit (default: selected branch's latest indexed commit)
   -s, --severity string    Minimum severity: critical, high, medium, low
       --summary            Show aggregate metrics only
 ```

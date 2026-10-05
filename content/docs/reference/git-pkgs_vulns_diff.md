@@ -7,7 +7,8 @@ weight: 10
 Compare vulnerabilities between commits
 
 Show vulnerabilities that were added or fixed between two commits.
-Defaults to comparing HEAD~1 with HEAD.
+With no refs, compares the selected branch's latest indexed commit with its first parent.
+With one ref, compares that ref with HEAD. With two refs, compares them directly.
 
 ```
 git-pkgs vulns diff [from] [to] [flags]

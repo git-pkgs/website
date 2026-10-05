@@ -10,6 +10,9 @@ Fetch and display changelog entries for a package between two versions.
 
 Uses the ecosyste.ms API to locate the package's repository and changelog file,
 then parses entries between the specified versions.
+If --from is omitted, the version in a PURL argument or the unique installed
+version at HEAD supplies the lower bound. Use --from to resolve multiple
+installed versions, or --from= to request an open lower bound.
 
 Examples:
   git-pkgs changelog lodash -e npm --from 4.17.20 --to 4.17.21
@@ -25,7 +28,7 @@ git-pkgs changelog <package> [flags]
 ```
   -e, --ecosystem string   Filter by ecosystem
   -f, --format string      Output format: text, json (default "text")
-      --from string        Current/old version
+      --from string        Current/old version (defaults to PURL or installed version)
   -h, --help               help for changelog
   -m, --manager string     Override package manager (for ecosystem detection)
       --to string          Target/new version (defaults to latest)
