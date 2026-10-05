@@ -13,6 +13,8 @@ By default, syncs vulnerability data from OSV before scanning. The sync uses a
 24-hour cache so repeated scans won't re-fetch everything.
 Use --live to query OSV directly for each dependency version.
 Use --no-sync to skip the sync and use only previously cached data.
+Use --fail-on to exit with status 1 for findings at or above a severity threshold.
+The report is written before exiting; --severity only filters the report.
 
 ```
 git-pkgs vulns scan [flags]
@@ -24,6 +26,7 @@ git-pkgs vulns scan [flags]
   -b, --branch string      Branch to query (default: current branch)
   -c, --commit string      Scan dependencies at specific commit (default: HEAD)
   -e, --ecosystem string   Filter by ecosystem
+      --fail-on string     Fail for findings at or above: critical, high, medium, low
   -f, --format string      Output format: text, json, sarif (default "text")
   -h, --help               help for scan
       --live               Query OSV directly instead of using cached data
