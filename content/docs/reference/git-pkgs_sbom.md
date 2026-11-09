@@ -22,7 +22,7 @@ git-pkgs sbom [flags]
   -f, --format string      Output format: json, xml (default "json")
   -h, --help               help for sbom
       --name string        Project name (default: git directory name)
-      --skip-enrichment    Skip license enrichment from ecosyste.ms
+      --skip-enrichment    Skip license and ancestry enrichment from ecosyste.ms
   -t, --type string        SBOM type: cyclonedx, spdx (default "cyclonedx")
       --version string     Project version
 ```
