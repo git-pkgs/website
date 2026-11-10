@@ -23,10 +23,13 @@ Zsh:
   # you will need to enable it. You can execute the following once:
   $ echo "autoload -U compinit; compinit" >> ~/.zshrc
 
-  # To load completions for each session, execute once:
-  $ git pkgs completion zsh > "${fpath[1]}/_git-pkgs"
+  # Add this to ~/.zshrc after compinit to complete both git-pkgs and git pkgs:
+  $ source <(git pkgs completion zsh)
 
-  # You will need to start a new shell for this setup to take effect.
+  # With Zsh's bundled Git completion, you can instead install an autoload file:
+  $ git pkgs completion zsh > "${fpath[1]}/_git-pkgs"
+  # Restart the shell after installing it. Git's own Zsh completion requires
+  # the source command above so its _git_pkgs hook is defined at startup.
 
 Fish:
   $ git pkgs completion fish | source
